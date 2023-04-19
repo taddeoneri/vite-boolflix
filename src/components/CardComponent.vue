@@ -1,7 +1,6 @@
 <template>
-    <div class="my-card mx-2 my-4 col-12 col-sm-6 col-md-4 col-lg-3">
-        <img src="https://image.tmdb.org/t/p/w500/t6HIqrRAclMCA60NsSmeqe9RmNV.jpg" :alt="film.title">
-        <h4>{{ film.title }}</h4>
+    <div class="my-card mx-2 my-5 col-12 col-sm-6 col-md-4 col-lg-3">
+        <img :src="store.baseImg + film.poster_path" :alt="film.title">
     </div>
 </template>
 
@@ -10,7 +9,9 @@ import { store } from '../storage/store';
 export default {
     name: 'CardComponent',
     data(){
-        store
+        return{
+            store
+        }
     },
     props: ['film']
 }
@@ -18,13 +19,15 @@ export default {
 
 <style lang="scss" scoped>
     .my-card{
-        border: 2px solid #fff;
+        
         text-align: center;
         color: #fff;
         width: 280px;
         height: 380px;
     }
     img{
+        border: 2px solid #fff;
         width: 100%;
+        height: 100%;
     }
 </style>

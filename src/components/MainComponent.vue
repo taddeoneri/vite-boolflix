@@ -1,7 +1,7 @@
 <template>
     <main>
-        <div class="container mx-auto row justify-content-between">
-            <h2 class="text-center my-3">Film Section</h2>
+        <h2 class="text-center py-3">Film Section</h2>
+        <div class="container d-flex flex-wrap justify-content-between">
             <CardComponent v-for="(film, index) in store.filmList" :key="film.id" :film="film"/>
         </div>
     </main>
