@@ -5,8 +5,8 @@ export const store = reactive({
     serieTvList: [],
     baseUrl: 'https://api.themoviedb.org/3/',
     endpoint: {
-        film: 'search/movie',
-        serieTv: 'search/tv'
+        film: 'search/movie?api_key=041b2a30c1d2321b1dcaeb0809bce857&query=a',
+        serieTv: 'search/tv?api_key=041b2a30c1d2321b1dcaeb0809bce857&query=a'
     },
     errormessage: '',
     loading: false,

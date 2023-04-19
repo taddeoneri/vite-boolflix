@@ -16,6 +16,23 @@ export default {
     components: {
       HeaderComponent,
       MainComponent
+    },
+    data(){
+      return {
+        store
+      }
+    },
+    methods: {
+      getFilms(){
+        const url = store.baseUrl + store.endpoint.film;
+        axios.get(url).then((res) => {
+          store.filmList = res.data.results;
+          console.log(store.filmList)
+        })
+      }
+    },
+    mounted(){
+      this.getFilms();
     }
 }
 </script>
