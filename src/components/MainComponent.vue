@@ -1,8 +1,10 @@
 <template>
-    <div>
-        <CardComponent v-for="(film, index) in store.filmList" :key="film.id"/> <!-- :film="film"  -->
-        
-    </div>
+    <main>
+        <div class="container mx-auto row">
+            <CardComponent v-for="(film, index) in store.filmList" :key="film.id" :film="film"/>
+        </div>
+    </main>
+    
 </template>
 
 <script>

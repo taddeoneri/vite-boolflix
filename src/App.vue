@@ -1,6 +1,7 @@
 <template>
   <div>
     <HeaderComponent />
+    
     <MainComponent />
   </div>
 </template>
