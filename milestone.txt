@@ -1,0 +1,28 @@
+MILESTONE 1
+Creare progetto con Vite e Vue e definire i componenti che ci serviranno per fare la struttura.
+I principali sono HeaderComponent e MainComponent
+Struttura iniziale
+HeaderComponent con a destra il logo di Boolflix e a destra un form con un input e un bottone
+che permetterà poi di filtrare i film e le serie tv secondo le nostre esigenze
+MainComponent diviso in due sezioni. La prima sezione verrà riempita con delle card che 
+corrispondono a dei film, mentre nella seconda sezione ci saranno le serie tv.
+
+
+MILESTONE 2
+Un'altra componente che ci servirà è la CardComponent, ovvero il singolo film o la singola serie tv,
+che verrà poi ciclata per ottenere tutte le card desiderate
+Inserie nello store i dati che ci serviranno principalmente. In questo caso metteremo la base url
+della chiamata API, inizialmente due end point: uno per i film e l'altro per le serie tv.
+Inoltre ci servirà due array vuoti che verranno poi riempiti.
+Stile
+Ogni volta che con il mouse vado sopra ad una card (:hover) fare una transizione piacevole
+per vedere le info del singolo film/serie tv (titolo, valutazione, trama, lingua originale)
+
+
+MILESTONE 3
+Filtrare la richiesta API con l'input.
+Nello store aggiungere search inizializzato con una stringa vuota
+Naturalmente servirà il v-model all'input per popolare quella stringa vuota, che
+non è altro che la ricerca fatta dall'utente.
+Attraverso l'emit possiamo comunicare al padre ovvero Vue.js che al click sul bottone ci sarà
+un cambiamnento nella search.
