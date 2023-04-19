@@ -1,8 +1,12 @@
 <template>
     <main>
-        <h2 class="text-center py-3">Film Section</h2>
+        <h2 class="text-center">Film Section</h2>
         <div class="container d-flex flex-wrap justify-content-between">
             <CardComponent v-for="(film, index) in store.filmList" :key="film.id" :film="film"/>
+        </div>
+        <h2 class="text-center">Serie TV Section</h2>
+        <div class="container d-flex flex-wrap justify-content-between">
+            <CardComponent v-for="(film, index) in store.serieList" :key="film.id" :film="film"/>
         </div>
     </main>
     
@@ -31,6 +35,7 @@ export default {
     }
     h2{
         font-size: 3rem;
+        padding-top: 55px;
         color: #fff;
     }
 </style>

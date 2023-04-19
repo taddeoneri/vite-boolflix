@@ -28,12 +28,18 @@ export default {
         const url = store.baseUrl + store.endpoint.film;
         axios.get(url).then((res) => {
           store.filmList = res.data.results;
-          console.log(store.filmList)
+        })
+      },
+      getSeries(){
+        const url = store.baseUrl + store.endpoint.serieTv;
+        axios.get(url).then((res) => {
+          store.serieList = res.data.results;
         })
       }
     },
     mounted(){
       this.getFilms();
+      this.getSeries();
     }
 }
 </script>

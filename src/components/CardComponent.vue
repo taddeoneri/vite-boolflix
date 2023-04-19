@@ -9,7 +9,7 @@ import { store } from '../storage/store';
 export default {
     name: 'CardComponent',
     data(){
-        return{
+        return {
             store
         }
     },
