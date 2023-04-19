@@ -8,7 +8,6 @@ export const store = reactive({
         film: 'search/movie?api_key=041b2a30c1d2321b1dcaeb0809bce857&query=a',
         serieTv: 'search/tv?api_key=041b2a30c1d2321b1dcaeb0809bce857&query=a'
     },
-    errormessage: '',
-    loading: false,
+    baseImg: 'https://image.tmdb.org/t/p/w500/',
     search: ''
 })
