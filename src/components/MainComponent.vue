@@ -1,12 +1,12 @@
 <template>
     <main>
         <h2 class="text-center">Film Section</h2>
-        <div class="container d-flex flex-wrap justify-content-between">
-            <CardComponent v-for="(film, index) in store.filmList" :key="film.id" :film="film"/>
+        <div class="film d-flex justify-content-between">
+            <CardComponent v-for="(film, index) in store.filmList" :key="film.id" :title="film.title" :release="film.release_date" :vote="film.vote_average" :language="film.original_language" :image="film.poster_path"/>
         </div>
         <h2 class="text-center">Serie TV Section</h2>
         <div class="container d-flex flex-wrap justify-content-between">
-            <CardComponent v-for="(film, index) in store.serieList" :key="film.id" :film="film"/>
+            <CardComponent v-for="(film, index) in store.serieList" :key="film.id" :title="film.name" :release="film.first_air_date" :vote="film.vote_average" :language="film.original_language" :image="film.poster_path"/>
         </div>
     </main>
     
@@ -37,5 +37,8 @@ export default {
         font-size: 3rem;
         padding-top: 55px;
         color: #fff;
+    }
+    .film{
+        overflow-x: auto;
     }
 </style>

@@ -1,6 +1,14 @@
 <template>
-    <div class="my-card mx-2 my-5 col-12 col-sm-6 col-md-4 col-lg-3">
-        <img :src="store.baseImg + film.poster_path" :alt="film.title">
+    <div class="my-card mx-2 my-4 col-12 col-sm-6 col-md-4 col-lg-3" @mouseover="show = true" @mouseleave="show = false">
+        <div class="box-image">
+            <img :src="store.baseImg + image" :alt="title">
+        </div>
+            <div :class="show === true ? '' : 'd-none'">
+                <h3>{{ title }}</h3>
+                <p>{{ release }}</p>
+                <h4>{{ vote }}</h4>
+                <p>{{ language }}</p>
+            </div>
     </div>
 </template>
 
@@ -10,23 +18,35 @@ export default {
     name: 'CardComponent',
     data(){
         return {
-            store
+            store,
+            show: false
         }
     },
-    props: ['film']
+    props: [
+        'title',
+        'release',
+        'vote',
+        'language',
+        'image'
+    ]
 }
 </script>
 
 <style lang="scss" scoped>
     .my-card{
-        
+        border: 2px solid #fff;
         text-align: center;
         color: #fff;
         width: 280px;
         height: 380px;
+        cursor: pointer;
+        transition: all .2s ease-in-out;
+    }
+    .my-card:hover{
+        transform: scale(1.5);
     }
     img{
-        border: 2px solid #fff;
+        
         width: 100%;
         height: 100%;
     }
