@@ -1,15 +1,17 @@
 <template>
-    <div class="my-card mx-2 my-4 col-12 col-sm-6 col-md-4 col-lg-3" @mouseover="show = true" @mouseleave="show = false">
-        <div class="box-image">
-            <img :src="store.baseImg + image" :alt="title">
-        </div>
-            <div :class="show === true ? '' : 'd-none'">
-                <h3>{{ title }}</h3>
-                <p>{{ release }}</p>
-                <h4>{{ vote }}</h4>
-                <p>{{ language }}</p>
-            </div>
+    <div v-if="!show" class="my-card mx-2 my-4 col-12 col-sm-6 col-md-4 col-lg-3" @mouseover="show = true" @mouseleave="show = false">
+        <img class="img-fluid" :src="store.baseImg + image" :alt="title">
     </div>
+    <div v-else="show" class="my-card mx-2 my-4 col-12 col-sm-6 col-md-4 col-lg-3 d-flex flex-column" @mouseover="show = true" @mouseleave="show = false">
+        <img class="img-card" :src="store.baseImg + imagehover" :alt="title">
+        <div class="id-flex align-items-center">
+            <h4>{{ title }}</h4>
+            <p>{{ release }}</p>
+            <h6>{{ vote }}</h6>
+            <p>{{ language }}</p>
+        </div>
+    </div>
+   
 </template>
 
 <script>
@@ -27,27 +29,31 @@ export default {
         'release',
         'vote',
         'language',
-        'image'
+        'image',
+        'imagehover'
     ]
 }
 </script>
 
 <style lang="scss" scoped>
     .my-card{
-        border: 2px solid #fff;
         text-align: center;
         color: #fff;
         width: 280px;
         height: 380px;
         cursor: pointer;
-        transition: all .2s ease-in-out;
+        transition: all .3s ease-in-out;
+        background-color: black;
+        border-radius: 10px;
     }
     .my-card:hover{
         transform: scale(1.5);
     }
     img{
-        
+        border-radius: 10px;
+    }
+    .img-card{
         width: 100%;
-        height: 100%;
+        height: 50%;
     }
 </style>

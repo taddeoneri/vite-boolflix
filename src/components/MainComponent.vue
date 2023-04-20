@@ -2,11 +2,11 @@
     <main>
         <h2 class="text-center">Film Section</h2>
         <div class="film d-flex justify-content-between">
-            <CardComponent v-for="(film, index) in store.filmList" :key="film.id" :title="film.title" :release="film.release_date" :vote="film.vote_average" :language="film.original_language" :image="film.poster_path"/>
+            <CardComponent v-for="(film, index) in store.filmList" :key="film.id" :title="film.title" :release="film.release_date" :vote="film.vote_average" :language="film.original_language" :image="film.poster_path" :imagehover="film.backdrop_path"/>
         </div>
         <h2 class="text-center">Serie TV Section</h2>
         <div class="container d-flex flex-wrap justify-content-between">
-            <CardComponent v-for="(film, index) in store.serieList" :key="film.id" :title="film.name" :release="film.first_air_date" :vote="film.vote_average" :language="film.original_language" :image="film.poster_path"/>
+            <CardComponent v-for="(film, index) in store.serieList" :key="film.id" :title="film.name" :release="film.first_air_date" :vote="film.vote_average" :language="film.original_language" :image="film.poster_path" :imagehover="film.backdrop_path"/>
         </div>
     </main>
     
