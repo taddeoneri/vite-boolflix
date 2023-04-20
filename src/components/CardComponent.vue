@@ -61,6 +61,6 @@ export default {
         height: 50%;
     }
     h4{
-        font-size: 1.1rem;
+        font-size: 1.3rem;
     }
 </style>
