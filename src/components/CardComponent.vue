@@ -4,7 +4,7 @@
     </div>
     <div v-else="show" class="my-card mx-2 my-4 col-12 col-sm-6 col-md-4 col-lg-3 d-flex flex-column" @mouseover="show = true" @mouseleave="show = false">
         <img class="img-card" :src="store.baseImg + imagehover" :alt="title">
-        <div class="id-flex align-items-center">
+        <div class="info d-flex flex-column justify-content-center align-items-center">
             <h4>{{ title }}</h4>
             <p>{{ release }}</p>
             <h6>{{ vote }}</h6>
@@ -55,5 +55,12 @@ export default {
     .img-card{
         width: 100%;
         height: 50%;
+    }
+    .info{
+        width: 100%;
+        height: 50%;
+    }
+    h4{
+        font-size: 1.1rem;
     }
 </style>

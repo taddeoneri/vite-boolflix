@@ -1,6 +1,6 @@
 <template>
   <div>
-    <HeaderComponent />
+    <HeaderComponent @set-search="getFilms"/>
     
     <MainComponent />
   </div>
@@ -26,7 +26,11 @@ export default {
     methods: {
       getFilms(){
         const url = store.baseUrl + store.endpoint.film;
-        axios.get(url).then((res) => {
+        const options = {
+          params: store.params
+        };
+
+        axios.get(url, options).then((res) => {
           store.filmList = res.data.results;
         })
       },
