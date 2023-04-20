@@ -11,7 +11,7 @@ export const store = reactive({
     baseImg: 'https://image.tmdb.org/t/p/w500/',
     search: '',
     params:{
-        apiKey: '041b2a30c1d2321b1dcaeb0809bce857',
+        api_key: '041b2a30c1d2321b1dcaeb0809bce857',
         query: ''
     }
 })

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <HeaderComponent @set-search="getFilms"/>
+    <HeaderComponent @set-search="getData"/>
     
     <MainComponent />
   </div>
@@ -29,16 +29,22 @@ export default {
         const options = {
           params: store.params
         };
-
         axios.get(url, options).then((res) => {
           store.filmList = res.data.results;
         })
       },
       getSeries(){
         const url = store.baseUrl + store.endpoint.serieTv;
-        axios.get(url).then((res) => {
+        const options = {
+          params: store.params
+        };
+        axios.get(url, options).then((res) => {
           store.serieList = res.data.results;
         })
+      },
+      getData(){
+        this.getFilms();
+        this.getSeries();
       }
     },
     mounted(){
