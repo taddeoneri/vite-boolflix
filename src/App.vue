@@ -25,6 +25,7 @@ export default {
     },
     methods: {
       getFilms(){
+        store.show = true;
         const url = store.baseUrl + store.endpoint.film;
         const options = {
           params: store.params
@@ -34,6 +35,7 @@ export default {
         })
       },
       getSeries(){
+        store.show = true;
         const url = store.baseUrl + store.endpoint.serieTv;
         const options = {
           params: store.params
@@ -42,14 +44,32 @@ export default {
           store.serieList = res.data.results;
         })
       },
+      getPopularFilm(){
+        const url = store.baseUrl + store.endpoint.popularFilm;
+        const options = {
+          params: store.paramsPopular
+        };
+        axios.get(url, options).then((res) => {
+          store.popularFilmList = res.data.results;
+        })
+      },
+      getPopularSerie(){
+        const url = store.baseUrl + store.endpoint.popularSerie;
+        const options = {
+          params: store.paramsPopular
+        };
+        axios.get(url, options).then((res) => {
+          store.popularSerieList = res.data.results;
+        })
+      },
       getData(){
         this.getFilms();
         this.getSeries();
       }
     },
     mounted(){
-      this.getFilms();
-      this.getSeries();
+      this.getPopularFilm();
+      this.getPopularSerie();
     }
 }
 </script>
