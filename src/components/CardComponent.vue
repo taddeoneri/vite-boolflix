@@ -4,7 +4,7 @@
     </div>
     <div v-else="show" class="my-card mx-2 my-4 col-12 col-sm-6 col-md-4 col-lg-3 d-flex flex-column" @mouseover="show = true" @mouseleave="show = false">
         <img class="img-card" :src="store.baseImg + imagehover" :alt="title">
-        <div class="info d-flex flex-column justify-content-center align-items-center">
+        <div class="info p-2 d-flex flex-column justify-content-center align-items-center">
             <h4>{{ title }}</h4>
             <p>{{ release }}</p>
             <div class="d-flex">
@@ -47,6 +47,7 @@ export default {
         transition: all .3s ease-in-out;
         background-color: black;
         border-radius: 10px;
+        overflow: hidden;
     }
     .my-card:hover{
         transform: scale(1.5);
@@ -64,5 +65,8 @@ export default {
     }
     h4{
         font-size: 1.3rem;
+    }
+    i{
+        color: yellow;
     }
 </style>
