@@ -7,7 +7,9 @@
         <div class="info d-flex flex-column justify-content-center align-items-center">
             <h4>{{ title }}</h4>
             <p>{{ release }}</p>
-            <h6>{{ vote }}</h6>
+            <div class="d-flex">
+                <i class="fa-star d-flex" v-for="n in 5" :class="(n <= Math.round(vote / 2)) ? 'fa-solid' : 'fa-regular'"></i>
+            </div>
             <p>{{ language }}</p>
         </div>
     </div>
